@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<h1>Hello World!</h1>
+<button>test</button>
+<hr>
+<button onclick="callAndroid()">shouldOverrideUrlLoading JS 调用Android </button>
+<button onclick="callAndroid1()"> JS 调用Android onJsPrompt</button>
+
+<script>
+    function call(msg){
+        document.querySelector('h1').innerHTML=msg;
+        return "Hello :" +msg;
+    }
+        document.querySelector('button').onclick=function(){
+        myService.jump();
+    }
+    function callAndroid(){
+        document.location="js://webview?arg1=111&arg2=222";
+        }
+
+    function callAndroid1(){
+        document.location=prompt("js://demo?arg1=111&arg2=222");
+        alert("demo"+result);
+    }
+    function returnResult(result){
+        alert("result is"+result);
+    }
+</script>
+</body>
+</html>
